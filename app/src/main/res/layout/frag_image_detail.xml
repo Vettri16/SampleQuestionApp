@@ -17,11 +17,8 @@
         <ImageView
             android:id="@+id/ivImageDetail"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
             loadImage="@{viewModel.currentImageEntity}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
