@@ -63,20 +63,6 @@ class SearchImageFragment: Fragment() {
             }
         }
 
-        searchImageViewModel.keyboardCloseLiveData.observe(viewLifecycleOwner){
-            closeKeyboard()
-        }
-    }
-
-    private fun closeKeyboard()
-    {
-        val imm: InputMethodManager =
-            requireActivity().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        var view = requireActivity().currentFocus
-        if (view == null) {
-            view = View(activity)
-        }
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
     private fun initScrollListener() {

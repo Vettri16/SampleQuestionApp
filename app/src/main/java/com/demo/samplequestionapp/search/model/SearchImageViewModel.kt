@@ -60,7 +60,6 @@ class SearchImageViewModel(application: Application): ObservableViewModel(applic
     val imageResponseLiveData: MutableLiveData<List<ImageUIEntity>> = MutableLiveData()
     val shimmerLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val imageDetailCloseClicked: MutableLiveData<Boolean> = MutableLiveData()
-    val keyboardCloseLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val searchImageList = ArrayList<ImageUIEntity>()
     private var countDownTimer: CountDownTimer? = null
     var currentImageEntity: ImageUIEntity? = null
@@ -88,7 +87,6 @@ class SearchImageViewModel(application: Application): ObservableViewModel(applic
     }
 
     fun getImagesForSearchHint(loadMore: Boolean) {
-        keyboardCloseLiveData.value = true
         if(loadMore) {
             loadMoreEnabled = true
         }else{
@@ -172,10 +170,6 @@ class SearchImageViewModel(application: Application): ObservableViewModel(applic
     fun onImageClicked(imageEntity: ImageUIEntity)
     {
         currentImageEntity = imageEntity
-    }
-
-    fun onImageDetailCloseClicked(v: View) {
-        imageDetailCloseClicked.value = true
     }
 
     fun onErrorRetryClicked(v: View) {
